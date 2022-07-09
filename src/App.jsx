@@ -2,6 +2,7 @@ import { useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
 import Heading from './components/Heading';
+import Navbar from './components/Navbar';
 
 function App() {
   // let abc = "123";
@@ -24,6 +25,8 @@ function App() {
   }
   return (
     <div>
+      <Navbar/>
+
       <Heading 
        click={sayHello}
        color="red"
