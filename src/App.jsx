@@ -6,13 +6,20 @@ import Navbar from './components/Navbar';
 
 function App() {
   // let abc = "123";
+  
   const [abc, setAbc] = useState("123");
 
-  // setTimeout(() => {
-  //   // console.log('settimeout')
-  //   // abc = "456";
-  //   setAbc("456");
-  // }, 2000);
+  // Dont call hooks in inner scopes:
+  // if(true){
+  //   const [abc, setAbc] = useState("123");
+  // }
+  // for (let index = 0; index < array.length; index++) {
+  //   const element = array[index];
+  //   const [abc, setAbc] = useState("123");  
+  // }  
+  // function inner(params) {
+  //   const [abc, setAbc] = useState("123");
+  // }
 
   function changeAbc(){
     setAbc('aaaaa');
