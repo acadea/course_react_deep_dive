@@ -1,8 +1,11 @@
 import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
+import css from "./Navbar.module.css";
 
 export default function Navbar() {
+
+  console.log(css);
 
   const navItems = [
     {
@@ -55,14 +58,8 @@ export default function Navbar() {
     console.log('counter A is changing')
   }, [counterA]);
 
-  function onClick(){
-    setCounterB(counterB+1);
-  }
-
   return (
-    <nav>
-      <button onClick={onClick}>Click</button>
-
+    <nav className={css.nav}>
       <ul>
         {renderNavItems()}
       </ul>
