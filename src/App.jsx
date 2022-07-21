@@ -31,7 +31,7 @@ function App() {
         Headinggg
        </Heading>
 
-      <h1>{abc}</h1>
+      <h1 className='bg-red-500'>{abc}</h1>
 
       {paragraph}
 
