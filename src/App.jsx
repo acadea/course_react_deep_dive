@@ -3,6 +3,9 @@ import logo from './logo.svg'
 import './App.css'
 import Heading from './components/Heading';
 import Navbar from './layouts/public/navbar/Navbar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import Contact from './pages/Contact';
 
 function App() {
   // let abc = "123";
@@ -20,22 +23,17 @@ function App() {
   }
   return (
     <div>
+      <BrowserRouter>
+
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path='contact' element={<Contact/>} />
+
+        </Routes>
       
-      <Navbar/>
-
-      <Heading 
-       click={sayHello}
-       color="red"
-       align="center"
-       size="40">
-        Headinggg
-       </Heading>
-
-      <h1 className='bg-red-500'>{abc}</h1>
-
-      {paragraph}
-
-      <button onClick={changeAbc} >Click me</button>
+      </BrowserRouter>
+      
+     
     </div>
   )
 }
