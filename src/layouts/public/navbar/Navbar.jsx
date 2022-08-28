@@ -15,6 +15,10 @@ export default function Navbar() {
       title: 'Contact',
       to: '/contact',
     },
+    {
+      title: 'Admin',
+      to: '/admin/dashboard',
+    },
  
 
   ];

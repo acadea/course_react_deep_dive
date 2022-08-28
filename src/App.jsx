@@ -6,6 +6,7 @@ import Navbar from './layouts/public/navbar/Navbar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
+import Dashboard from './pages/admin/Dashboard';
 
 function App() {
   // let abc = "123";
@@ -28,6 +29,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path='contact' element={<Contact/>} />
+          <Route path='/admin/dashboard' element={<Dashboard/>} />
 
         </Routes>
       
