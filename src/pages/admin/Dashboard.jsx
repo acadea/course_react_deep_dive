@@ -1,11 +1,15 @@
 import React from 'react'
 import { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 export default function Dashboard(props) {
 
 
   const navigate = useNavigate();
+
+  const params = useParams();
+
+  console.log({params});
 
   useEffect(() => {
 
@@ -21,6 +25,6 @@ export default function Dashboard(props) {
   }, []);
 
   return (
-    <div>Dashboard</div>
+    <div>Dashboard {params.userId}</div>
   )
 }
