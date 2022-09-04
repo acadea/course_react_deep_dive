@@ -9,19 +9,9 @@ import Contact from './pages/Contact';
 import Dashboard from './pages/admin/Dashboard';
 
 function App() {
-  // let abc = "123";
   
-  const [abc, setAbc] = useState("123");
+  
 
-  function changeAbc(){
-    setAbc('aaaaa');
-  }
-
-  const paragraph = <p>{abc}</p>
-
-  function sayHello(){
-    console.log('heyyaya');
-  }
   return (
     <div>
       <BrowserRouter>
