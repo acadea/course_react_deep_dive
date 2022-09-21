@@ -45,7 +45,16 @@ const router = createBrowserRouter([
           return json({
             hey: 'abc',
           })
+        },
+        async action({params, request}){
+          console.log({params});
+          console.log({request});
+          const formData = await request.formData();
+          console.log('formdata is ', Object.fromEntries(formData));
 
+          return {
+            errors: "The email is wronggg!"
+          }
         }
       },
       {
