@@ -32,6 +32,7 @@ const router = createBrowserRouter([
         loader({params, request}){
           // console.log({params})
           // console.log({request})
+          console.log('abc');
           
           // fetch user
           // return result
@@ -47,8 +48,7 @@ const router = createBrowserRouter([
           })
         },
         async action({params, request}){
-          console.log({params});
-          console.log({request});
+          console.log('actionnn');
           const formData = await request.formData();
           console.log('formdata is ', Object.fromEntries(formData));
 
