@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Form, useActionData, useFetcher, useLoaderData, useLocation } from 'react-router-dom'
+import { Form, useActionData, useFetcher, useLoaderData, useLocation, useRevalidator } from 'react-router-dom'
 
 export default function UserDetails(props) {
 
@@ -9,22 +9,27 @@ export default function UserDetails(props) {
 
   const fetcher = useFetcher();
 
-  console.log('fetcher.state', fetcher.state);
-  console.log('fetcher.formData', Object.fromEntries(fetcher.formData || new FormData()));
-  console.log('fetcher.formAction', fetcher.formAction);
-  console.log('fetcher.formMethod', fetcher.formMethod);
-  console.log('fetcher.data', fetcher.data);
-  console.log('fetcher.formEncType', fetcher.formEncType);
+  const revalidator = useRevalidator();
+
+  // console.log('fetcher.state', fetcher.state);
+  // console.log('fetcher.formData', Object.fromEntries(fetcher.formData || new FormData()));
+  // console.log('fetcher.formAction', fetcher.formAction);
+  // console.log('fetcher.formMethod', fetcher.formMethod);
+  // console.log('fetcher.data', fetcher.data);
+  // console.log('fetcher.formEncType', fetcher.formEncType);
 
   useEffect(() => {
     setTimeout(() => {
       // fetcher.load('/admin/manage/user/1');
-      fetcher.load(location.pathname);
+      // fetcher.load(location.pathname);
 
-      fetcher.submit({hey: 'youuuuu'}, {
-        method: 'post',
-        action: location.pathname,
-      })
+      revalidator.revalidate();
+
+
+      // fetcher.submit({hey: 'youuuuu'}, {
+      //   method: 'post',
+      //   action: location.pathname,
+      // })
     }, 2000);
   }, [])
 

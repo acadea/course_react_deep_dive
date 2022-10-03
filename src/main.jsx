@@ -29,10 +29,14 @@ const router = createBrowserRouter([
       { 
         path: 'manage/user/:userId', 
         element: <UserDetails />,
+        shouldRevalidate(args) {
+          console.log({args});
+          return false;
+        },
         loader({params, request}){
           // console.log({params})
           // console.log({request})
-          console.log('abc');
+          console.log('loader loading');
           
           // fetch user
           // return result
