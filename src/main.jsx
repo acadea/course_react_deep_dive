@@ -2,11 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import 'virtual:windi.css';
 import './index.css'
-import { BrowserRouter, createBrowserRouter, HashRouter, json, RouterProvider } from 'react-router-dom';
+import { BrowserRouter, createBrowserRouter, createHashRouter, HashRouter, json, RouterProvider } from 'react-router-dom';
 import { publicRoutes } from './routes/public-routes';
 import { adminRoutes } from './routes/admin-routes';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   ...publicRoutes,
   ...adminRoutes,
 ])

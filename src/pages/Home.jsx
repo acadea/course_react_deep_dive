@@ -4,10 +4,8 @@ import PublicLayout from '../layouts/public/PublicLayout'
 
 export default function Home(props) {
 
-
   const navigate = useNavigate();
 
-  throw new Error('heyyyaaa');
   function onClick(){
 
     navigate('/contact', {
