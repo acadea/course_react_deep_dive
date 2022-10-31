@@ -1,8 +1,12 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import PublicLayout from '../layouts/public/PublicLayout'
+import css from './Home.module.scss';
 
 export default function Home(props) {
+
+  console.log({css});
+
 
   const navigate = useNavigate();
 
@@ -18,7 +22,10 @@ export default function Home(props) {
 
   return (
     <PublicLayout>
-      Home...
+
+      <div className={css.container}>
+        <h1 className={css.title}>Home...</h1>
+      </div>
 
       <button onClick={onClick}>click</button>
     </PublicLayout>
