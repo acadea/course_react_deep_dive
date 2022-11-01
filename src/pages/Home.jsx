@@ -1,7 +1,10 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import Price from '../components/Price';
+import ButtonIcon from '../components/buttons/button-icon/ButtonIcon';
+import ButtonOutlined from '../components/buttons/button-outlined/ButtonOutlined';
+import RoundButton from '../components/buttons/round-button/RoundButton';
 import PublicLayout from '../layouts/public/PublicLayout'
+import { mdiAccountBadge } from '@mdi/js';
 import css from './Home.module.scss';
 
 export default function Home(props) {
@@ -24,11 +27,11 @@ export default function Home(props) {
   return (
     <PublicLayout>
 
-      <div className={css.container}>
-        <h1 className={css.title}>Home...</h1>
-      </div>
+      <RoundButton>+</RoundButton>
 
-      <Price value={[]} />
+      <ButtonOutlined>Clickk</ButtonOutlined>
+
+      <ButtonIcon path={mdiAccountBadge} />
 
       <button onClick={onClick}>click</button>
     </PublicLayout>
