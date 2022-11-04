@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ButtonIcon from '../components/buttons/button-icon/ButtonIcon';
 import ButtonOutlined from '../components/buttons/button-outlined/ButtonOutlined';
@@ -6,6 +6,7 @@ import RoundButton from '../components/buttons/round-button/RoundButton';
 import PublicLayout from '../layouts/public/PublicLayout'
 import { mdiAccountBadge } from '@mdi/js';
 import css from './Home.module.scss';
+import Toggle from '../components/toggle/Toggle';
 
 export default function Home(props) {
 
@@ -24,6 +25,8 @@ export default function Home(props) {
 
   }
 
+  const [checked, setChecked] = useState(true);
+
   return (
     <PublicLayout>
 
@@ -34,6 +37,10 @@ export default function Home(props) {
       <ButtonIcon path={mdiAccountBadge} />
 
       <button onClick={onClick}>click</button>
+      <br />
+
+      <Toggle onChange={(e) => setChecked(e.target.checked) } value={checked}>toggle</Toggle>
+
     </PublicLayout>
   )
 }
