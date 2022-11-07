@@ -8,6 +8,7 @@ import { mdiAccountBadge } from '@mdi/js';
 import css from './Home.module.scss';
 import Toggle from '../components/toggle/Toggle';
 import EditableInput from '../components/input/EditableInput';
+import ProgressBar from '../components/progress-bar/ProgressBar';
 
 export default function Home(props) {
 
@@ -45,6 +46,9 @@ export default function Home(props) {
       <br />
 
       <EditableInput value={'sup bruh'}></EditableInput>
+
+      <br />
+      <ProgressBar percent={80}/>
 
     </PublicLayout>
   )
