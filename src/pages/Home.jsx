@@ -9,6 +9,7 @@ import css from './Home.module.scss';
 import Toggle from '../components/toggle/Toggle';
 import EditableInput from '../components/input/EditableInput';
 import ProgressBar from '../components/progress-bar/ProgressBar';
+import Tooltip from '../components/tooltip/Tooltip';
 
 export default function Home(props) {
 
@@ -49,6 +50,14 @@ export default function Home(props) {
 
       <br />
       <ProgressBar percent={80}/>
+
+      <br />
+
+
+      <Tooltip tooltip={"hey bruh"}>
+        <div>heya</div>
+      </Tooltip>
+
 
     </PublicLayout>
   )
