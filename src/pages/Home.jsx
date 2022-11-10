@@ -10,6 +10,7 @@ import Toggle from '../components/toggle/Toggle';
 import EditableInput from '../components/input/EditableInput';
 import ProgressBar from '../components/progress-bar/ProgressBar';
 import Tooltip from '../components/tooltip/Tooltip';
+import BaseTimer from '../containers/timer/BaseTimer';
 
 export default function Home(props) {
 
@@ -57,6 +58,13 @@ export default function Home(props) {
       <Tooltip tooltip={"hey bruh"}>
         <div>heya</div>
       </Tooltip>
+
+      <br />
+
+      <BaseTimer onStart={() => {}} 
+        onFinish={() => {}}
+        onStop={() => {}}
+        timeout={10}></BaseTimer>
 
 
     </PublicLayout>
