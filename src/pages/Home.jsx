@@ -11,10 +11,15 @@ import EditableInput from '../components/input/EditableInput';
 import ProgressBar from '../components/progress-bar/ProgressBar';
 import Tooltip from '../components/tooltip/Tooltip';
 import BaseTimer from '../containers/timer/BaseTimer';
+import { useGlobalContext } from '../store/GlobalStore';
 
 export default function Home(props) {
 
   console.log({css});
+
+  const globalStore = useGlobalContext();
+
+  console.log({globalStore});
 
 
   const navigate = useNavigate();

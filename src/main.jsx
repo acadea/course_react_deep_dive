@@ -5,14 +5,20 @@ import './index.css'
 import { BrowserRouter, createBrowserRouter, createHashRouter, HashRouter, json, RouterProvider } from 'react-router-dom';
 import { publicRoutes } from './routes/public-routes';
 import { adminRoutes } from './routes/admin-routes';
+import { GlobalProvider } from './store/GlobalStore';
 
 const router = createHashRouter([
   ...publicRoutes,
   ...adminRoutes,
 ])
 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+
+    <GlobalProvider>
+      <RouterProvider router={router} />
+    </GlobalProvider>
+
   </React.StrictMode>
 )
