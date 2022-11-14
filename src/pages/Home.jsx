@@ -11,7 +11,7 @@ import EditableInput from '../components/input/EditableInput';
 import ProgressBar from '../components/progress-bar/ProgressBar';
 import Tooltip from '../components/tooltip/Tooltip';
 import BaseTimer from '../containers/timer/BaseTimer';
-import { useGlobalContext } from '../store/GlobalStore';
+import { ACTIONS, useGlobalContext } from '../store/GlobalStore';
 
 export default function Home(props) {
 
@@ -26,11 +26,16 @@ export default function Home(props) {
 
   function onClick(){
 
-    navigate('/contact', {
-      state: {
-        heyya: '12333',
-      }
-    })
+    globalStore.dispatch({
+      type: ACTIONS.UPDATE_HEY,
+      payload: 'ice cream',
+    });
+
+    // navigate('/contact', {
+    //   state: {
+    //     heyya: '12333',
+    //   }
+    // })
 
   }
 
