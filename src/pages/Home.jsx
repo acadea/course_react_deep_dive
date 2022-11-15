@@ -11,7 +11,8 @@ import EditableInput from '../components/input/EditableInput';
 import ProgressBar from '../components/progress-bar/ProgressBar';
 import Tooltip from '../components/tooltip/Tooltip';
 import BaseTimer from '../containers/timer/BaseTimer';
-import { ACTIONS, useGlobalContext } from '../store/GlobalStore';
+import { ACTIONS, GlobalContext, useGlobalContext } from '../store/GlobalStore';
+import HeyMate from '../components/HeyMate';
 
 export default function Home(props) {
 
@@ -76,6 +77,7 @@ export default function Home(props) {
         onStop={() => {}}
         timeout={10}></BaseTimer>
 
+      <HeyMate/>
 
     </PublicLayout>
   )
