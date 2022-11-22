@@ -30,15 +30,42 @@ function TimerListItem({timer}) {
     })
   }
 
+  function updateTimer(attribute){
+
+    return function(event){
+      // get state from store
+      const targetIndex = getItemIndex();
+
+      // update attribute
+      const updated = {
+        ...timerStore.state.timers[targetIndex],
+        [attribute]: event.target.value,
+      }
+
+      // resave timers in store
+      timerStore.dispatch({
+        type: TIMER_ACTIONS.SET_TIMERS,
+        payload: [
+          ...timerStore.state.timers.slice(0, targetIndex),
+          updated,
+          ...timerStore.state.timers.slice(targetIndex + 1),
+        ]
+      })  
+    }
+  }
+
   return (
     <div className='shadow py-10 px-5 w-60 m-3 shadow-gray-400 flex items-center justify-between'>
       
       <div>
         {/* input */}
-        <EditableInput value={timer.title} style={{width: '100px'}} ></EditableInput>
+        <EditableInput 
+          onInput={updateTimer('title')}
+          value={timer.title} style={{width: '100px'}} ></EditableInput>
 
         <span>Time(sec): 
           <EditableInput
+            onInput={updateTimer('duration')}
             type='number'
             value={timer.duration}
             style={{width: '35px', display: 'inline'}}

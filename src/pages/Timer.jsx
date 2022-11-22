@@ -15,6 +15,8 @@ function Timer(props) {
 
   const timers = timerStore.state.timers;
 
+  const isInfinite = timerStore.state.isInfinite;
+
   function addTimer(){
     timerStore.dispatch({
       type: TIMER_ACTIONS.SET_TIMERS,
@@ -26,6 +28,13 @@ function Timer(props) {
           duration: 30,
         }
       ]
+    })
+  }
+
+  function onToggle(event){
+    timerStore.dispatch({
+      type: TIMER_ACTIONS.SET_IS_INFINITE,
+      payload: event.target.checked,
     })
   }
 
@@ -50,7 +59,7 @@ function Timer(props) {
 
         <ButtonOutlined>Start</ButtonOutlined>
 
-        <Toggle>Loop indefinitely</Toggle>
+        <Toggle onChange={onToggle} value={isInfinite}>Loop indefinitely</Toggle>
 
       </div>
 

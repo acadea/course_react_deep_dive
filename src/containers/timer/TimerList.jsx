@@ -10,11 +10,11 @@ function TimerList(props) {
   return (
     <GlobalContext.Consumer>
       {(store) => (
-        <>
+        <div className='flex flex-wrap justify-center'>
           {store.timer.state.timers.map(timer => (
             <TimerListItem timer={timer} key={timer.id} />
           ))}
-        </>
+        </div>
 
       )}
     </GlobalContext.Consumer>
