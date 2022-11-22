@@ -1,6 +1,7 @@
 import { useReducer } from "react";
 import { useContext } from "react";
 import { createContext } from "react";
+import { timerReducer, timerStore } from "./TimerStore";
 
 
 export const ACTIONS = {
@@ -33,10 +34,14 @@ export function GlobalProvider(props){
     hey: 'mate',
   });
 
+  const [timerState, timerDispatch] = useReducer(timerReducer, timerStore)
+
   return (
     <GlobalContext.Provider {...props} value={{
-      state,
-      dispatch,
+      timer: {
+        state: timerState,
+        dispatch: timerDispatch,
+      },
     }}></GlobalContext.Provider>
   )
 }

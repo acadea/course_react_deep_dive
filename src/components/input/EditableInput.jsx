@@ -16,7 +16,9 @@ function EditableInput({value, type = '', ...props}) {
   }
 
   return (
-    <div className={`flex justify-between relative items-center ${css.wrapper}`}>
+    <div 
+    style={props.style}
+    className={`flex justify-between relative items-center ${css.wrapper}`}>
 
       <span className={css.input}>
         {/* text */}
