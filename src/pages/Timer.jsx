@@ -8,6 +8,7 @@ import Toggle from '../components/toggle/Toggle'
 import { useGlobalContext } from '../store/GlobalStore'
 import { TIMER_ACTIONS } from '../store/TimerStore'
 import { v4 } from 'uuid'
+import { Link } from 'react-router-dom'
 
 function Timer(props) {
 
@@ -57,7 +58,9 @@ function Timer(props) {
       {/* start */}
       <div className='flex justify-center items-center'>
 
-        <ButtonOutlined>Start</ButtonOutlined>
+        <Link to="/timer/start">
+          <ButtonOutlined>Start</ButtonOutlined>
+        </Link>
 
         <Toggle onChange={onToggle} value={isInfinite}>Loop indefinitely</Toggle>
 

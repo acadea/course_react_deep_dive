@@ -67,7 +67,7 @@ function TimerListItem({timer}) {
           <EditableInput
             onInput={updateTimer('duration')}
             type='number'
-            value={timer.duration}
+            value={String(timer.duration)}
             style={{width: '35px', display: 'inline'}}
           ></EditableInput>
         </span>
