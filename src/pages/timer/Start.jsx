@@ -7,6 +7,8 @@ import {useGlobalContext} from '../../store/GlobalStore';
 import { TIMER_ACTIONS } from '../../store/TimerStore'
 import { Link } from 'react-router-dom'
 import RoundButton from '../../components/buttons/round-button/RoundButton'
+import alarmBeep from './../../assets/alarm_beep.mp3';
+import oneplus from './../../assets/oneplus_notification.mp3';
 
 function Start(props) {
 
@@ -20,11 +22,15 @@ function Start(props) {
 
   const [hasStopped, setHasStopped] = useState(false);
 
+  const alarm = new Audio(alarmBeep);
+  const transitionNotification = new Audio(oneplus);
+
   function onStart(){
     setHasStopped(false);
   }
   function onFinish(){
     setTimeout(() => {
+      transitionNotification.play();
       // check if at the end
       const atTheEnd = currentTimerIndex === timers.length -1;
   
@@ -37,8 +43,9 @@ function Start(props) {
       }
   
       // if non left, then stop
-  
       if(!timerStore.state.isInfinite){
+        transitionNotification.pause();
+        alarm.play();
         setHasStopped(true)
       }
       return timerStore.dispatch({
@@ -54,6 +61,8 @@ function Start(props) {
 
   }
   function onStop(){
+    alarm.pause();
+    transitionNotification.pause();
     setHasStopped(true);
     timerStore.dispatch({
       type: TIMER_ACTIONS.SET_TIMER_CURRENT_INDEX,
