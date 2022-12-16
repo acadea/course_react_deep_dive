@@ -1,6 +1,6 @@
 ## Intro
 
-This is the source code for our Youtube Series: [Laravel API Server from scratch](https://www.youtube.com/playlist?list=PLSfH3ojgWsQosqpQUc28yP9jJZXrEylJY)
+This is the source code for our Youtube Series: [React Deep Dive I](hhttps://www.youtube.com/playlist?list=PLSfH3ojgWsQrV8PX8Ueet-3MYqFQkVyaM)
 
 ## Support us
 
