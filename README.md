@@ -1,6 +1,6 @@
 ## Intro
 
-This is the source code for our Youtube Series: [React Deep Dive I](hhttps://www.youtube.com/playlist?list=PLSfH3ojgWsQrV8PX8Ueet-3MYqFQkVyaM)
+This is the source code for our Youtube Series: [React Deep Dive I](https://www.youtube.com/playlist?list=PLSfH3ojgWsQrV8PX8Ueet-3MYqFQkVyaM)
 
 ## Support us
 
